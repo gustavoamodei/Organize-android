@@ -1,5 +1,6 @@
 package com.example.organizze.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -25,10 +26,24 @@ public class PrincipalActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+               adicionarDespesas();
             }
         });
+
+        FloatingActionButton fab2 = findViewById(R.id.fab2);
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                adicionarReceitas();
+            }
+        });
+    }
+
+    public void adicionarDespesas(){
+        startActivity(new Intent(this,DespesasActivity.class));
+    }
+    public  void adicionarReceitas(){
+        startActivity(new Intent(this,ReceitasActivity.class));
     }
 
 }

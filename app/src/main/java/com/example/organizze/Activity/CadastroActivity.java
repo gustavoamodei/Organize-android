@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.organizze.Config.ConfiguracaoFirebase;
+import com.example.organizze.Helper.Base64Custom;
 import com.example.organizze.Model.Usuario;
 import com.example.organizze.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,7 +25,7 @@ public class CadastroActivity extends AppCompatActivity {
 
     private EditText campoNome,campoEmail,campoSenha;
     private Button botaoCadastrar;
-    private FirebaseAuth autenticação;
+    private FirebaseAuth autenticacao;
     private Usuario usuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,13 +64,17 @@ public class CadastroActivity extends AppCompatActivity {
         });
     }
     public  void  CadastrarUsuario(){
-        autenticação = ConfiguracaoFirebase.getFirebaseAutentication();
-        autenticação.createUserWithEmailAndPassword(usuario.getEmail(),usuario.getSenha()
+        autenticacao = ConfiguracaoFirebase.getFirebaseAutentication();
+        autenticacao.createUserWithEmailAndPassword(usuario.getEmail(),usuario.getSenha()
         ).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                  if(task.isSuccessful()){
+                     String idUsuario = Base64Custom.codificarBase64(usuario.getEmail());
+                     usuario.setIdUsuario(idUsuario);
+                     usuario.salvar();
                      finish();
+
                  }else{
                      String excecao;
                      try {
