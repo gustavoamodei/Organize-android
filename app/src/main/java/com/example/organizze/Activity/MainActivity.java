@@ -15,7 +15,7 @@ import com.heinrichreimersoftware.materialintro.app.IntroActivity;
 import com.heinrichreimersoftware.materialintro.slide.FragmentSlide;
 
 public class MainActivity extends IntroActivity {
-    FirebaseAuth autenticacao;
+   private FirebaseAuth autenticacao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +61,8 @@ public class MainActivity extends IntroActivity {
     }
     public  void verificarUsuarioLogado(){
         autenticacao = ConfiguracaoFirebase.getFirebaseAutentication();
-        //autenticacao.signOut();
+
+       // autenticacao.signOut();
         if(autenticacao.getCurrentUser()!= null){
             abrirTelaPrincipal();
         }

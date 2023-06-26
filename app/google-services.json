@@ -15,11 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "675231317518-i374eck2m1poppo018jgsgm2rv7o1f4e.apps.googleusercontent.com",
+          "client_id": "675231317518-ls3dhj84b5lg0l2k6p84edql3m1k1ppp.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.organizze",
-            "certificate_hash": "556d68ac6ec20c25df4eccc881c9a1542e75df8e"
+            "certificate_hash": "68bd8fed9ca36f8d120ff8c533b6f4d73227e26d"
           }
         },
         {
