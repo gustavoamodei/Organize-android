@@ -38,21 +38,24 @@ public class LoginActivity extends AppCompatActivity {
         botaoEntrar =findViewById(R.id.buttonEntrar);
 
         botaoEntrar.setOnClickListener(new View.OnClickListener() {
-            String textoEmail = campoEmail.getText().toString();
-            String textoSenha = campoSenha.getText().toString();
+
             @Override
             public void onClick(View v) {
+
+                String textoEmail = campoEmail.getText().toString();
+                String textoSenha = campoSenha.getText().toString();
+
                 if(!textoEmail.isEmpty()){
                     if(!textoSenha.isEmpty()){
                         usuario = new Usuario();
                         usuario.setEmail(textoEmail);
                         usuario.setSenha(textoSenha);
-
+                        validarLogin();
                     }else{
-                        Toast.makeText(getApplicationContext(),"é obrigatório preencher Email",Toast.LENGTH_LONG).show();
+                        Toast.makeText(LoginActivity.this,"é obrigatório preencher senha",Toast.LENGTH_LONG).show();
                     }
                 }else{
-                    Toast.makeText(getApplicationContext(),"é obrigatório preencher senha",Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this,"é obrigatório preencher email",Toast.LENGTH_LONG).show();
                 }
             }
         });
