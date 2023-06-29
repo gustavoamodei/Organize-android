@@ -55,7 +55,8 @@ public class PrincipalActivity extends AppCompatActivity {
     private DatabaseReference movimentacaoRef;
     private String mesAnoSelecionado;
     private Movimentacao movimentacao;
-
+    private FloatingActionButton fab;
+    private FloatingActionButton fab2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +69,7 @@ public class PrincipalActivity extends AppCompatActivity {
         textoSaldo = findViewById(R.id.textSaldo);
         recyclerView = findViewById(R.id.recyclerMovimentos);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,7 +77,8 @@ public class PrincipalActivity extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton fab2 = findViewById(R.id.fab2);
+
+        fab2 = findViewById(R.id.fab2);
         fab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -233,9 +235,21 @@ public class PrincipalActivity extends AppCompatActivity {
                 startActivity(new Intent(this, MainActivity.class));
                 finish();
                 break;
+            case R.id.menuOcultarMostrar:
+                controlaFloatBtn();
+
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public  void controlaFloatBtn(){
+        if(fab.isShown() && fab2.isShown()){
+            fab.hide();
+            fab2.hide();
+        }else{
+            fab.show();
+            fab2.show();
+        }
     }
 
     public void adicionarDespesas() {

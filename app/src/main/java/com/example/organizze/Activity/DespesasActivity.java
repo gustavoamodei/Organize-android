@@ -21,6 +21,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class DespesasActivity extends AppCompatActivity {
     private TextInputEditText campoData,campoCategoria,campoDescricao;
@@ -65,6 +67,12 @@ public class DespesasActivity extends AppCompatActivity {
             finish();
         }
     }
+    public static boolean validarFormatoData(String data){
+        String regex = "^\\d{2}/\\d{2}/\\d{4}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher((CharSequence)data);
+        return matcher.matches();
+    }
     public Boolean validarCamposDespesa(){
 
         String textoValor = campoValor.getText().toString();
@@ -75,7 +83,13 @@ public class DespesasActivity extends AppCompatActivity {
             if(!textoData.isEmpty()){
                 if(!textoCategoria.isEmpty()){
                     if(!textoDescricao.isEmpty()){
-                        return  true;
+                        if(validarFormatoData(textoData)){
+                            return true;
+                        }else{
+                            Toast.makeText(DespesasActivity.this,
+                                    "formato de data inválido tente dd/MM/AAAA ",Toast.LENGTH_LONG).show();
+                            return  false;
+                        }
                     }else{
                         Toast.makeText(DespesasActivity.this,
                                 "é obrigatório preencher descricao",Toast.LENGTH_LONG).show();

@@ -3,8 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menuSair"
-        android:orderInCategory="100"
+        android:orderInCategory="200"
         android:title="Sair"
         app:showAsAction="never"
     />
+    <item
+        android:id="@+id/menuOcultarMostrar"
+        android:orderInCategory="100"
+        android:title="Ocultar/Mostra Botões"
+        app:showAsAction="never"
+        />
 </menu>
