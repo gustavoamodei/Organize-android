@@ -44,6 +44,7 @@ public class MainActivity extends IntroActivity {
         addSlide(new FragmentSlide.Builder()
                 .background(R.color.colorSlide)
                 .fragment(R.layout.intro_cadastro)
+                .canGoForward(false)
                 .build());
     }
 

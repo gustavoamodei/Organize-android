@@ -29,6 +29,14 @@
             android:textAlignment="textEnd"
             android:textColor="@android:color/white"
             android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Receitas"
+            android:textAlignment="center"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout

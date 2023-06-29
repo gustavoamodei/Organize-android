@@ -27,17 +27,18 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
+        android:layout_gravity="bottom|center_horizontal"
         android:layout_margin="@dimen/fab_margin"
         android:tag="despesa"
-        app:srcCompat="@drawable/ic_attach_receita_24dp" />
+        app:srcCompat="@drawable/ic_prancheta_24dp"
+        tools:visibility="visible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|left"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="80dp"
         app:backgroundTint="@color/colorAccentReceita"
         app:srcCompat="@drawable/ic_attach_receita_24dp" />
 

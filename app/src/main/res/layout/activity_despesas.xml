@@ -29,6 +29,15 @@
             android:textAlignment="textEnd"
             android:textColor="@android:color/white"
             android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Despesas"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -66,7 +75,7 @@
             android:id="@+id/editCategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ex: salario" />
+            android:hint="ex: almoço" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -84,7 +93,7 @@
             android:id="@+id/editDescricao"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ex salario mensal" />
+            android:hint="ex almoço com amigos" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -95,7 +104,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
-        android:onClick="salvarReceitas"
+        android:onClick="salvarDespesas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

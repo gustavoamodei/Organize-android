@@ -53,9 +53,10 @@ public class ReceitasActivity extends AppCompatActivity {
             movimentacao.setTipo("R");
 
 
-            Double receitaAtualizada = receitaTotal + valorRecuperado;
+            Double receitaAtualizada = (receitaTotal + valorRecuperado);
             atualizarReceita(receitaAtualizada);
             movimentacao.salvar(data);
+            finish();
         }
     }
     public Boolean validarCamposReceita(){

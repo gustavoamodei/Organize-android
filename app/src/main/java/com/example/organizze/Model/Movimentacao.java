@@ -5,14 +5,17 @@ import com.example.organizze.Helper.Base64Custom;
 import com.example.organizze.Helper.DateCustom;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+
 
 public class Movimentacao {
     private String data;
     private String categoria;
     private String descricao;
     private String tipo;
-    private double valor;
+    private Double valor;
+    private  String key;
+
+
 
     public Movimentacao() {
     }
@@ -26,6 +29,14 @@ public class Movimentacao {
                 .child(mesAno)
                 .push()
                 .setValue(this);
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
     public String getData() {
         return data;
